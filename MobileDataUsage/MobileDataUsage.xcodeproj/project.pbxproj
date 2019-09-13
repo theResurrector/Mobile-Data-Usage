@@ -14,6 +14,7 @@
 		3E13915C2329DBB8001ACC18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E13915A2329DBB8001ACC18 /* LaunchScreen.storyboard */; };
 		3E1391672329DBB8001ACC18 /* MobileDataUsageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1391662329DBB8001ACC18 /* MobileDataUsageTests.swift */; };
 		3E1391722329DBB8001ACC18 /* MobileDataUsageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1391712329DBB8001ACC18 /* MobileDataUsageUITests.swift */; };
+		3E139184232A3E48001ACC18 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E139183232A3E48001ACC18 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		3E13916D2329DBB8001ACC18 /* MobileDataUsageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileDataUsageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E1391712329DBB8001ACC18 /* MobileDataUsageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileDataUsageUITests.swift; sourceTree = "<group>"; };
 		3E1391732329DBB8001ACC18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E139183232A3E48001ACC18 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +99,12 @@
 		3E1391502329DBB7001ACC18 /* MobileDataUsage */ = {
 			isa = PBXGroup;
 			children = (
+				3E139182232A3E39001ACC18 /* Utilities */,
+				3E139181232A3D88001ACC18 /* Storyboards */,
+				3E139180232A3D7A001ACC18 /* ViewModels */,
+				3E13917F232A3D6F001ACC18 /* ViewControllers */,
 				3E1391512329DBB7001ACC18 /* AppDelegate.swift */,
-				3E1391532329DBB7001ACC18 /* ViewController.swift */,
-				3E1391552329DBB7001ACC18 /* Main.storyboard */,
 				3E1391582329DBB8001ACC18 /* Assets.xcassets */,
-				3E13915A2329DBB8001ACC18 /* LaunchScreen.storyboard */,
 				3E13915D2329DBB8001ACC18 /* Info.plist */,
 			);
 			path = MobileDataUsage;
@@ -123,6 +126,38 @@
 				3E1391732329DBB8001ACC18 /* Info.plist */,
 			);
 			path = MobileDataUsageUITests;
+			sourceTree = "<group>";
+		};
+		3E13917F232A3D6F001ACC18 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3E1391532329DBB7001ACC18 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3E139180232A3D7A001ACC18 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3E139181232A3D88001ACC18 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3E13915A2329DBB8001ACC18 /* LaunchScreen.storyboard */,
+				3E1391552329DBB7001ACC18 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3E139182232A3E39001ACC18 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3E139183232A3E48001ACC18 /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +293,7 @@
 			files = (
 				3E1391542329DBB7001ACC18 /* ViewController.swift in Sources */,
 				3E1391522329DBB7001ACC18 /* AppDelegate.swift in Sources */,
+				3E139184232A3E48001ACC18 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
