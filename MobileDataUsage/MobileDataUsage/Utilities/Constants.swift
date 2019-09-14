@@ -9,6 +9,12 @@
 import Foundation
 
 struct Constants {
-    static let baseUrl = "https://data.gov.sg/"
+    static let baseUrl = "https://data.gov.sg"
     
+    enum HTTPMethods: String {
+        case get = "GET"
+        case post = "POST"
+        case delete = "DELETE"
+        case update = "UPDATE"
+    }
 }
