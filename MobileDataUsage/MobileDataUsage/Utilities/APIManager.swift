@@ -13,7 +13,7 @@ class APIManager {
     static let sharedInstance = APIManager()
     typealias CompletionHandler = (_ apiResponseHandler: APIResponseHandler, _ error: Error?) -> Void
     
-    func getPostWithId(method: String, url: String, completed: @escaping CompletionHandler) {
+    func getJSONRequest(method: String, url: String, completed: @escaping CompletionHandler) {
         
         let request: NSMutableURLRequest = NSMutableURLRequest(url: NSURL(string: url)! as URL)
         request.httpMethod = method
@@ -42,6 +42,7 @@ struct APIResponseHandler {
     var help: String?
     var result: Any?
     var success: Bool?
+    var data: Data?
     
     init(json: Any?) {
         if let js = json {
