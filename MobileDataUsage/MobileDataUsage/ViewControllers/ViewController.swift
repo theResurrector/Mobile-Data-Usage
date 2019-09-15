@@ -29,6 +29,7 @@ class ViewController: UIViewController {
     func setupView() {
         dataCollectionView.delegate = self
         dataCollectionView.dataSource = self
+        dataCollectionView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     }
 }
 
