@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct MobileDataUsageData: Decodable {
+struct MobileDataUsageData: Decodable, Equatable {
+    static func == (lhs: MobileDataUsageData, rhs: MobileDataUsageData) -> Bool {
+        return true
+    }
+    
     var resource_id: String?
     var fields: [Fields]?
     var records: [Records]?

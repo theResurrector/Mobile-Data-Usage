@@ -14,7 +14,6 @@
 		3E1391572329DBB7001ACC18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E1391552329DBB7001ACC18 /* Main.storyboard */; };
 		3E1391592329DBB8001ACC18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E1391582329DBB8001ACC18 /* Assets.xcassets */; };
 		3E13915C2329DBB8001ACC18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E13915A2329DBB8001ACC18 /* LaunchScreen.storyboard */; };
-		3E1391672329DBB8001ACC18 /* MobileDataUsageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1391662329DBB8001ACC18 /* MobileDataUsageTests.swift */; };
 		3E1391722329DBB8001ACC18 /* MobileDataUsageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1391712329DBB8001ACC18 /* MobileDataUsageUITests.swift */; };
 		3E139184232A3E48001ACC18 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E139183232A3E48001ACC18 /* Constants.swift */; };
 		3EFA756A232CED7800E39540 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFA7569232CED7800E39540 /* MainViewModel.swift */; };
@@ -468,7 +467,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E1391672329DBB8001ACC18 /* MobileDataUsageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

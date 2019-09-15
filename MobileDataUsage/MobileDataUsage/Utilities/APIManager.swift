@@ -11,14 +11,19 @@ import SwiftyJSON
 
 class APIManager {
     static let sharedInstance = APIManager()
+    var session = URLSession.shared
+    private let engine: NetworkEngine
     typealias CompletionHandler = (_ apiResponseHandler: APIResponseHandler, _ error: Error?) -> Void
+    
+    init(session: NetworkEngine = URLSession.shared) {
+        self.engine = session
+    }
     
     func getJSONRequest(method: String, url: String, completed: @escaping CompletionHandler) {
         
         let request: NSMutableURLRequest = NSMutableURLRequest(url: NSURL(string: url)! as URL)
         request.httpMethod = method
-        let session = URLSession.shared
-        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
+        engine.performRequest(withRequest: request as URLRequest) { (data, response, error) in
             if(error != nil) {
                 let apiResponseHandler: APIResponseHandler = APIResponseHandler(json: nil)
                 completed(apiResponseHandler, error)
@@ -31,8 +36,7 @@ class APIManager {
                     print(error)
                 }
             }
-        })
-        task.resume()
+        }
     }
 }
 
@@ -59,5 +63,32 @@ struct APIResponseHandler {
             return false
         }
         return serverResult
+    }
+}
+
+protocol NetworkEngine {
+    typealias Handler = (Data?, URLResponse?, Error?) -> Void
+    
+    func performRequest(withRequest: URLRequest, completionHandler: @escaping Handler)
+}
+
+extension URLSession: NetworkEngine {
+    typealias Handler = NetworkEngine.Handler
+    
+    func performRequest(withRequest request: URLRequest, completionHandler: @escaping Handler) {
+        let task = dataTask(with: request, completionHandler: completionHandler)
+        task.resume()
+    }
+}
+
+class NetworkEngineMock: NetworkEngine {
+    typealias Handler = NetworkEngine.Handler
+    
+    var request: URLRequest?
+    
+    func performRequest(withRequest request: URLRequest, completionHandler: @escaping NetworkEngineMock.Handler) {
+        
+        self.request = request
+        
     }
 }
