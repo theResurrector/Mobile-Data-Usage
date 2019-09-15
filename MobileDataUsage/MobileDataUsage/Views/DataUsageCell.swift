@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol DataUsageCellProtocol {
-    func lowerConsumptionImageTapped()
+    func lowerConsumptionImageTapped(message: String?)
 }
 
 class DataUsageCell: UICollectionViewCell {
@@ -20,6 +20,7 @@ class DataUsageCell: UICollectionViewCell {
     @IBOutlet weak var bottomConstraintToImage: NSLayoutConstraint!
     
     var delegate: DataUsageCellProtocol?
+    var message: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,8 +39,8 @@ class DataUsageCell: UICollectionViewCell {
         
         lowerConsumptionImage.image = UIImage(named: "downArrow")
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.imageTapped(_:)))
-
         lowerConsumptionImage.addGestureRecognizer(tap)
+        lowerConsumptionImage.isUserInteractionEnabled = true
     }
     
     func showDecreasedConsumption(_ show: Bool) {
@@ -54,7 +55,7 @@ class DataUsageCell: UICollectionViewCell {
     }
     
     @objc func imageTapped(_ sender: UITapGestureRecognizer? = nil) {
-        delegate?.lowerConsumptionImageTapped()
+        delegate?.lowerConsumptionImageTapped(message: message)
     }
 }
 

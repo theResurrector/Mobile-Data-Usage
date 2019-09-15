@@ -63,13 +63,17 @@ class MainViewModel {
             var previousQuarterConsumption: Double = 0
             filteredYear = dataByYear.filter({String($0.quarter?.prefix(4) ?? "") == year})
             var total: Double = 0
+            var messages = [String]()
             for data in filteredYear {
                 let consumption = Double(data.volume ?? "")
                 let isConsumptionLower = compareConsumption(consumption ?? 0, with: previousQuarterConsumption)
                 previousQuarterConsumption = consumption ?? 0
+                let consumptionLowerText = isConsumptionLower ? "(Lower)" : "(Higher)"
+                let message = "\(data.quarter ?? ""): \(data.volume ?? "")\(consumptionLowerText)"
+                messages.append(message)
                 let year = String(data.quarter?.prefix(4) ?? "")
                 total += Double(data.volume ?? "") ?? 0
-                yearlyRecord = RecordByYear(year: year, totalConsumption: String(total), hasConsumptionDropped: isConsumptionLower)
+                yearlyRecord = RecordByYear(year: year, totalConsumption: String(total), hasConsumptionDropped: isConsumptionLower, message: messages.joined(separator: "\n"))
                 
             }
             recordByYear.append(yearlyRecord)
@@ -87,6 +91,7 @@ struct RecordByYear {
     var year: String?
     var totalConsumption: String?
     var hasConsumptionDropped : Bool?
+    var message: String?
 }
 
 extension Array where Element: Hashable {

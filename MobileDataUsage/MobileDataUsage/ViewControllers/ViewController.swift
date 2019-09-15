@@ -44,6 +44,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         cell.lblYear.text = viewModel.getAllEntriesByYear()[row].year ?? ""
         cell.lblTotalConsumption.text = viewModel.getAllEntriesByYear()[row].totalConsumption ?? ""
         cell.showDecreasedConsumption(viewModel.getAllEntriesByYear()[row].hasConsumptionDropped ?? false)
+        cell.message = viewModel.getAllEntriesByYear()[row].message
         
         return cell
     }
@@ -58,8 +59,22 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
 }
 
 extension ViewController: DataUsageCellProtocol {
-    func lowerConsumptionImageTapped() {
-        
+    func lowerConsumptionImageTapped(message: String?) {
+        let alert = UIAlertController(title: "Decrease in consumption", message: message ?? "", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+                
+            }}))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
