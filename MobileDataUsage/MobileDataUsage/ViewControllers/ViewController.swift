@@ -40,8 +40,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let row = indexPath.row
         let cell = (collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? DataUsageCell)!
+        cell.delegate = self
         cell.lblYear.text = viewModel.getAllEntriesByYear()[row].year ?? ""
         cell.lblTotalConsumption.text = viewModel.getAllEntriesByYear()[row].totalConsumption ?? ""
+        cell.showDecreasedConsumption(viewModel.getAllEntriesByYear()[row].hasConsumptionDropped ?? false)
         
         return cell
     }
@@ -51,8 +53,13 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         let width = contentWidth / 3
         let height: CGFloat = width
         
-        return CGSize(width: width, height: height)
+        return CGSize(width: width, height: height + 30)
     }
-    
+}
+
+extension ViewController: DataUsageCellProtocol {
+    func lowerConsumptionImageTapped() {
+        
+    }
 }
 

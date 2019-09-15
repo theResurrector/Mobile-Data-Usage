@@ -38,30 +38,40 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pRs-YP-6MG">
                                                     <rect key="frame" x="0.0" y="0.0" width="250" height="267"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yrb-21-vJo">
-                                                            <rect key="frame" x="104" y="113" width="42" height="41"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yrb-21-vJo">
+                                                            <rect key="frame" x="10" y="10" width="230" height="41"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wH-ZK-PDf">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wH-ZK-PDf">
+                                                                    <rect key="frame" x="94" y="0.0" width="42" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrW-fk-lnL">
-                                                                    <rect key="frame" x="0.0" y="20.5" width="42" height="20.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrW-fk-lnL">
+                                                                    <rect key="frame" x="94" y="20.5" width="42" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FEe-w9-XYB">
+                                                            <rect key="frame" x="67.5" y="142" width="115" height="115"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" secondItem="FEe-w9-XYB" secondAttribute="height" multiplier="1:1" id="obA-Yw-mog"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="Yrb-21-vJo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pRs-YP-6MG" secondAttribute="top" constant="10" id="DzD-ZF-uhi"/>
-                                                        <constraint firstItem="Yrb-21-vJo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pRs-YP-6MG" secondAttribute="leading" constant="10" id="jzf-rN-yDb"/>
-                                                        <constraint firstItem="Yrb-21-vJo" firstAttribute="centerY" secondItem="pRs-YP-6MG" secondAttribute="centerY" id="pJY-GF-yUI"/>
-                                                        <constraint firstItem="Yrb-21-vJo" firstAttribute="centerX" secondItem="pRs-YP-6MG" secondAttribute="centerX" id="t1f-Qt-hwi"/>
+                                                        <constraint firstItem="Yrb-21-vJo" firstAttribute="top" secondItem="pRs-YP-6MG" secondAttribute="top" constant="10" id="DzD-ZF-uhi"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Yrb-21-vJo" secondAttribute="trailing" constant="10" id="ULU-sX-4Yz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="FEe-w9-XYB" secondAttribute="bottom" constant="10" id="a5v-iO-1zs"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Yrb-21-vJo" secondAttribute="bottom" priority="250" constant="10" id="bCo-ma-JlU"/>
+                                                        <constraint firstItem="FEe-w9-XYB" firstAttribute="centerX" secondItem="Yrb-21-vJo" secondAttribute="centerX" id="bzu-6j-DFR"/>
+                                                        <constraint firstItem="FEe-w9-XYB" firstAttribute="width" secondItem="Yrb-21-vJo" secondAttribute="width" multiplier="0.5" id="jxD-eP-Y40"/>
+                                                        <constraint firstItem="Yrb-21-vJo" firstAttribute="leading" secondItem="pRs-YP-6MG" secondAttribute="leading" constant="10" id="jzf-rN-yDb"/>
+                                                        <constraint firstItem="FEe-w9-XYB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yrb-21-vJo" secondAttribute="bottom" priority="999" constant="10" id="oni-b9-Vlw"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -73,8 +83,10 @@
                                             <constraint firstAttribute="bottom" secondItem="pRs-YP-6MG" secondAttribute="bottom" id="rNv-ab-VGF"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="bottomConstraintToImage" destination="oni-b9-Vlw" id="vLl-2Z-BN5"/>
                                             <outlet property="lblTotalConsumption" destination="NrW-fk-lnL" id="6b2-sY-reo"/>
                                             <outlet property="lblYear" destination="2wH-ZK-PDf" id="IYi-bh-TMe"/>
+                                            <outlet property="lowerConsumptionImage" destination="FEe-w9-XYB" id="Kqg-9f-4db"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

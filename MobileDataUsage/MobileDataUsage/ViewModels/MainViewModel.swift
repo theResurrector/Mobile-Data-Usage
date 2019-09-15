@@ -60,20 +60,26 @@ class MainViewModel {
         }
         
         for year in years.uniques {
+            var previousQuarterConsumption: Double = 0
             filteredYear = dataByYear.filter({String($0.quarter?.prefix(4) ?? "") == year})
             var total: Double = 0
             for data in filteredYear {
+                let consumption = Double(data.volume ?? "")
+                let isConsumptionLower = compareConsumption(consumption ?? 0, with: previousQuarterConsumption)
+                previousQuarterConsumption = consumption ?? 0
                 let year = String(data.quarter?.prefix(4) ?? "")
                 total += Double(data.volume ?? "") ?? 0
-                
-                yearlyRecord = RecordByYear(year: year, totalConsumption: String(total), hasConsumptionDropped: false)
+                yearlyRecord = RecordByYear(year: year, totalConsumption: String(total), hasConsumptionDropped: isConsumptionLower)
                 
             }
             recordByYear.append(yearlyRecord)
         }
         
-        
         return recordByYear
+    }
+    
+    func compareConsumption(_ new: Double, with previous: Double) -> Bool {
+        return new < previous
     }
 }
 
